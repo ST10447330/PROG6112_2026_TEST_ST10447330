@@ -19,18 +19,55 @@ public class Prog_question_one {
         // Create Data Fields
      
         /*
-        my declaration of array for years and months 
+        
+        My declaration of array for CITY and CONSOLES 
         */
-        String[] city = {"D", "DELIVERIES 2019", "DELIVERIES 2020"};
+        // Print report header
+        System.out.println("GAMING CONSOLE REPORT ");
+        
+        String[] city = {"CAPETOWN", "PORT ELIZABETH", "PETORIA"};
         String[] console = {"PS5", "XBOX", "SWITCH"};
 
-        int[][] deliveries = {
-            {128, 135, 139},
-            {155, 129, 175},
-            {129, 130, 185}
+        int[][] amount = {
+            {1000, 2000, 3000},
+            {2000, 3000, 4000},
+            {1500, 1100, 1200}
         };
-
-    
+   System.out.println("Display 1000: " + amount[0][0]);
+        
+        
+        
+        System.out.println("Display 1000: " + amount[2][1]);
+        
+       
+       //Loop through the Rows of amounts for each city and console
+        
+        for (int row = 0; row < city.length; row++) {
+            
+        // Loops through the columns for our current row(specific row)
+        
+        for (int col = 0;col < amount[row].length; col++) {
+        System.out.println(amount[row][col]  + "");
+        
+        } //The end of the inner loop
+       System.out.println();
+       //Start displaying the next row on another line
+        // Determining and displaying the top-selling estate agent
+        
+        int topIndex = 0;
+        for (int i = 1; i < amount.length; i++) {
+            String[] totalamount = null;
+            if (amount[i] > city[topIndex]) {
+                topIndex = i;
+            }
+        }
+        System.out.println("Top performing city: " + city[topIndex]);
+       
+       System.out.println("CITY WITH THE MOST SALES: PORT ELIZABETH ");
+       
+       
+            
+        }
     
     }
 }
